@@ -34,6 +34,7 @@
 Первый запрос-заготовка был таким:
 
 > Я хочу получить игру Сокобан на Lua Solar2d, с использованием composer, коротко: заставка, игровое поле, переход между уровнями - просто загрузка новой карты(карта - задается текстовой картой). Проект организован так:
+> ```text
 > project/
 > ├── main.lua
 > ├── scenes/
@@ -45,6 +46,7 @@
 >     ├── gameState.lua
 >     ├── undo.lua
 >     └── save.lua
+> ```
 > 
 > main.lua – точка входа, запускает сцену меню.
 > scenes/menu.lua – главное меню (новая игра / загрузка / выход). scenes/game.lua – основная игровая сцена, управляет интерфейсом и логикой.
@@ -143,20 +145,20 @@
 ### Повтор генерации игры на основе ТЗ
 
 **1.**
-[https://github.com/SergeyZ73/Sokoban/tech_specs/Socoban_TZ_1.md](https://github.com/SergeyZ73/Sokoban/tech_specs/Socoban_TZ_1.md), в ТЗ не сохранена информация об объектах, размерах, цветах. Более стабильная реализация, но вид сильно варьируется. Пример генерации:
+[Socoban_TZ_1.md](/tech_specs/Socoban_TZ_1.md), в ТЗ не сохранена информация об объектах, размерах, цветах. Более стабильная реализация, но вид сильно варьируется. Пример генерации:
 
 ![Изображение 7](img/Sokoban_with_AI_html_e6d120ca.jpg)
 ![Изображение 8](img/Sokoban_with_AI_html_dd3e2526.jpg)
 ![Изображение 9](img/Sokoban_with_AI_html_7862eeee.jpg)
 
 **2.**
-[https://github.com/SergeyZ73/Sokoban/tech_specs/Socoban_TZ_2.md](https://github.com/SergeyZ73/Sokoban/tech_specs/Socoban_TZ_2.md), в ТЗ сохранена информация об объектах, размерах, цветах — не факт, что всегда строго будет следовать написанному и может чудить. Пример генерации:
+[Socoban_TZ_2.md](/tech_specs/Socoban_TZ_2.md), в ТЗ сохранена информация об объектах, размерах, цветах — не факт, что всегда строго будет следовать написанному и может чудить. Пример генерации:
 
 ![Изображение 10](img/Sokoban_with_AI_html_a8f175a4.jpg)
 ![Изображение 11](img/Sokoban_with_AI_html_3ef48536.jpg)
 ![Изображение 12](img/Sokoban_with_AI_html_da642575.jpg)
 
-Если возникает черный экран, лучше заново сгенерировать, но можно попробовать дать инструкции из [https://github.com/SergeyZ73/Sokoban/tech_specs/ifBlackScreen_patch_TZ_2.md](https://github.com/SergeyZ73/Sokoban/tech_specs/ifBlackScreen_patch_TZ_2.md)
+Если возникает черный экран, лучше заново сгенерировать, но можно попробовать дать инструкции из [ifBlackScreen_patch_TZ_2.md](/tech_specs/ifBlackScreen_patch_TZ_2.md)
 
 Причина: В некоторых сборках Solar2D (подтверждено на 3.0.0, Build 2025.3721) менеджер сцен composer перестаёт активировать модульные сцены, документ описывает, как заменить Composer на собственную реализацию modules/sceneManager.lua (~40 строк), совместимую с архитектурой Socoban_TZ_2.md.
 
